@@ -6,7 +6,7 @@ resource "vault_namespace" "nsproject2" {
   path = "nsproject2"
 }
 
-resource "github" {
+provider  "github" {
     individual=true
 }
 
