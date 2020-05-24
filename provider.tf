@@ -7,5 +7,5 @@ provider "tfe" {
 }
 
 provider "github" {
-   orgnisation="cba-demo"
+   organization="cba-demo"
 }
