@@ -6,10 +6,6 @@ resource "vault_namespace" "nsproject2" {
   path = "nsproject2"
 }
 
-provider  "github" {
-    individual=true
-}
-
 resource "github_repository" "cba-vault-namespace-nsproject1" {
   name        = "cba-vault-namespace-nsproject1"
   description = "My awesome codebase"

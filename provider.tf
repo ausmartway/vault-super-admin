@@ -7,5 +7,5 @@ provider "tfe" {
 }
 
 provider "github" {
-    
+   individual=true
 }
