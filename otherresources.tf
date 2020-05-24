@@ -12,8 +12,8 @@ resource "github_repository" "cba-vault-namespace-nsproject1" {
 
   private = true
 
-  template {
-    owner = "ausmartway"
-    repository = "vault-namespace-template"
-  }
+  // template {
+  //   owner = "ausmartway"
+  //   repository = "vault-namespace-template"
+  // }
 }
