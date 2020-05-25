@@ -79,3 +79,11 @@ resource "vault_token" "project1-namespace-admin-token" {
   renew_min_lease = 43200
   renew_increment = 86400
 }
+
+resource "tfe_variable" "project1-workspace-namespace-vault-token" {
+  workspace_id=tfe_workspace.project1-workspace.id
+  description="Admin Vault Token "
+  category="env"
+  key="VAULT_TOKEN"
+  value=vault_token.project1-namespace-admin-token.client_token
+}
