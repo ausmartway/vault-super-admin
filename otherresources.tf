@@ -64,6 +64,7 @@ path "${vault_namespace.project1-namespace.path}/identity/*" {
    capabilities = ["create", "read", "update", "delete", "list"]
 }
 
+
 # Manage tokens
 path "${vault_namespace.project1-namespace.path}/auth/token/*" {
    capabilities = ["create", "read", "update", "delete", "list", "sudo"]
