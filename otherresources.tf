@@ -23,13 +23,13 @@ resource "tfe_workspace" "project1-workspace" {
   }
 }
 
-resource "tfe_variable" "project1-workspace-namespace-vault-namespace" {
-  workspace_id=tfe_workspace.project1-workspace.id
-  description="namespace this workspace is bind to"
-  category="env"
-  key="VAULT_NAMESPACE"
-  value=vault_namespace.project1-namespace.path
-}
+// resource "tfe_variable" "project1-workspace-namespace-vault-namespace" {
+//   workspace_id=tfe_workspace.project1-workspace.id
+//   description="namespace this workspace is bind to"
+//   category="env"
+//   key="VAULT_NAMESPACE"
+//   value=vault_namespace.project1-namespace.path
+// }
 
 resource "vault_policy" "project1-namespace-admin-policy" {
   name="project1-namespace-admin-policy"
@@ -80,10 +80,10 @@ resource "vault_token" "project1-namespace-admin-token" {
   renew_increment = 86400
 }
 
-resource "tfe_variable" "project1-workspace-namespace-vault-token" {
-  workspace_id=tfe_workspace.project1-workspace.id
-  description="Admin Vault Token "
-  category="env"
-  key="VAULT_TOKEN"
-  value=vault_token.project1-namespace-admin-token.client_token
-}
+// resource "tfe_variable" "project1-workspace-namespace-vault-token" {
+//   workspace_id=tfe_workspace.project1-workspace.id
+//   description="Admin Vault Token "
+//   category="env"
+//   key="VAULT_TOKEN"
+//   value=vault_token.project1-namespace-admin-token.client_token
+// }
