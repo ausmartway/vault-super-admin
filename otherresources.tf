@@ -17,3 +17,8 @@ resource "github_repository" "cba-vault-namespace-nsproject1" {
     repository = "vault-namespace-template"
   }
 }
+
+resource "tfe_workspace" "project1-workspace" {
+  name         = "project1-workspace"
+  organization = "yulei"
+}
