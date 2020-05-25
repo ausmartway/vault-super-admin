@@ -32,7 +32,7 @@ resource "tfe_variable" "project1-workspace-namespace-vault-token" {
   description="namespace this workspace is bind to"
   category="env"
   key="VAULT_NAMESPACE"
-  value="${vault_namespace.project1-namespace.name}"
+  value=vault_namespace.project1-namespace.full_name
 }
 
 // resource "vault" "vault_token" {
