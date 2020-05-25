@@ -56,7 +56,7 @@ path "${vault_namespace.project1-namespace.path}/sys/mounts/*" {
 
 # List available secrets engines
 path "${vault_namespace.project1-namespace.path}/sys/mounts" {
-  capabilities = [ "read" ]
+  capabilities = [ "read","list" ]
 }
 
 # Create and manage entities and groups
