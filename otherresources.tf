@@ -1,11 +1,6 @@
-resource "vault_namespace" "nsproject1" {
-  path = "nsproject1"
+resource "vault_namespace" "project1-namespace" {
+  path = "project1"
 }
-
-resource "vault_namespace" "testnamespace" {
-  path = "nsproject1/testnamespace"
-}
-
 
 // resource "vault_namespace" "nsproject2" {
 //   path = "nsproject2"
