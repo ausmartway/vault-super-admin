@@ -18,12 +18,12 @@ resource "github_repository" "cba-vault-namespace-nsproject1" {
   }
 }
 
-// resource "tfe_workspace" "project1-workspace" {
-//   name         = "project1-workspace"
-//   organization = "yulei"
-//   vcs_repo  {
-//     identifier = "cba-demo/cba-vault-namespace-nsproject1"
-//     // identifier = "cba-demo/${github_repository.cba-vault-namespace-nsproject1.name}"
-//     oauth_token_id = "ot-tkpMwbbMB59jSYiE"
-//   }
-// }
+resource "tfe_workspace" "project1-workspace" {
+  name         = "project1-workspace"
+  organization = "yulei"
+  vcs_repo  {
+    identifier = "cba-demo/cba-vault-namespace-nsproject1"
+    // identifier = "cba-demo/${github_repository.cba-vault-namespace-nsproject1.name}"
+    oauth_token_id = "ot-jVjGUxW5YamZeVSZ"
+  }
+}
