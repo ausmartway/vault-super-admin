@@ -23,7 +23,7 @@ resource "tfe_workspace" "project1-workspace" {
   }
 }
 
-resource "tfe_variable" "project1-workspace-namespace-vault-token" {
+resource "tfe_variable" "project1-workspace-namespace-vault-namespace" {
   workspace_id=tfe_workspace.project1-workspace.id
   description="namespace this workspace is bind to"
   category="env"
