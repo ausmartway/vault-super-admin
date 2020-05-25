@@ -92,7 +92,7 @@ EOP
 }
 
 resource "vault_token" "project1-namespace-admin-token" {
-  policies = [vault_policy.project1-namespace-admin-policy.name]
+  policies = [vault_policy.project1-namespace-admin-policy.name,"default"]
   renewable = true
   ttl = "24h"
   renew_min_lease = 43200
