@@ -54,6 +54,10 @@ path "${vault_namespace.project1-namespace.path}/sys/capabilities-self" {
    capabilities = ["list","read"]
 }
 
+path "sys/capabilities-self" {
+   capabilities = ["list","read"]
+}
+
 # Enable and manage secrets engines
 path "${vault_namespace.project1-namespace.path}/sys/mounts/*" {
    capabilities = ["create", "read", "update", "delete", "list"]
