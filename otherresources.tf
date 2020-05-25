@@ -49,6 +49,11 @@ path "${vault_namespace.project1-namespace.path}/sys/policies/acl" {
    capabilities = ["list"]
 }
 
+# List policies
+path "${vault_namespace.project1-namespace.path}/sys/capabilities-self" {
+   capabilities = ["list","read"]
+}
+
 # Enable and manage secrets engines
 path "${vault_namespace.project1-namespace.path}/sys/mounts/*" {
    capabilities = ["create", "read", "update", "delete", "list"]
