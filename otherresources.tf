@@ -23,7 +23,7 @@ resource "tfe_workspace" "project1-workspace" {
   organization = "yulei"
   vcs_repo  {
     // identifier = "cba-demo/cba-vault-namespace-nsproject1"
-   identifier = "${github_repository.cba-vault-namespace-nsproject1.full_name}"
+   identifier = github_repository.cba-vault-namespace-nsproject1.full_name
     oauth_token_id = "ot-jVjGUxW5YamZeVSZ"
   }
 }
