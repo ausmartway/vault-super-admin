@@ -75,5 +75,16 @@ path "${vault_namespace.project1-namespace.path}/auth/token/*" {
 EOP
 
 }
-// resource "vault" "vault_token" {
-// }
+
+resource "vault_token" "project1-namespace-admin-token" {
+  role_name = "admin"
+
+  policies = [vault_policy.project1-namespace-admin-policy.name]
+
+  renewable = true
+  ttl = "24h"
+
+  renew_min_lease = 43200
+  renew_increment = 86400
+
+}
