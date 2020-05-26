@@ -89,12 +89,3 @@ resource "vault_token" "project1-namespace-admin-token" {
   renew_increment = 86400
 }
 
-// resouce "vault_identity_entity" "project1-namespace-admin-identity-entity" {
-//   name="project1-namespace-admin-identity-entity"
-
-// }
-// resource "vault_entity_group" "project1-namespace-admin-group" {
-//   name="project1-namespace-admin-group"
-
-// }
-
