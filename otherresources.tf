@@ -35,57 +35,43 @@ resource "vault_policy" "project1-namespace-admin-policy" {
   name="project1-namespace-admin-policy"
   policy=<<EOP
 # Manage namespaces
-path "${vault_namespace.project1-namespace.path}/sys/namespaces/*" {
+path "sys/namespaces/*" {
    capabilities = ["create", "read", "update", "delete", "list", "sudo"]
 }
 
 # Manage policies
-path "${vault_namespace.project1-namespace.path}/sys/policies/acl/*" {
+path "sys/policies/acl/*" {
    capabilities = ["create", "read", "update", "delete", "list", "sudo"]
 }
 
 # List policies
-path "${vault_namespace.project1-namespace.path}/sys/policies/acl" {
+path "sys/policies/acl" {
    capabilities = ["list"]
 }
 
-# List policies
-path "${vault_namespace.project1-namespace.path}/sys/capabilities-self" {
-   capabilities = ["list","read"]
-}
-
-path "sys/capabilities-self" {
-   capabilities = ["list","read"]
-}
-
 # Enable and manage secrets engines
-path "${vault_namespace.project1-namespace.path}/sys/mounts/*" {
+path "sys/mounts/*" {
    capabilities = ["create", "read", "update", "delete", "list"]
 }
 
 # List available secrets engines
-path "${vault_namespace.project1-namespace.path}/sys/mounts" {
-  capabilities = [ "read","list" ]
-}
-
-# List available secrets engines
-path "${vault_namespace.project1-namespace.path}/sys/internal/ui/mounts/*" {
-  capabilities = [ "create", "read", "update", "delete", "list" ]
-}
-
-path "${vault_namespace.project1-namespace.path}/sys/internal/ui/*" {
-  capabilities = [ "create", "read", "update", "delete", "list" ]
+path "sys/mounts" {
+  capabilities = [ "read" ]
 }
 
 # Create and manage entities and groups
-path "${vault_namespace.project1-namespace.path}/identity/*" {
+path "identity/*" {
    capabilities = ["create", "read", "update", "delete", "list"]
 }
 
-
 # Manage tokens
-path "${vault_namespace.project1-namespace.path}/auth/token/*" {
+path "auth/token/*" {
    capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+}
+
+# Manage secrets at 'kv'
+path "kv/*" {
+   capabilities = ["create", "read", "update", "delete", "list"]
 }
 EOP
 
@@ -106,4 +92,13 @@ resource "tfe_variable" "project1-workspace-namespace-vault-token" {
   key="VAULT_TOKEN"
   value=vault_token.project1-namespace-admin-token.client_token
 }
+
+// resouce "vault_identity_entity" "project1-namespace-admin-identity-entity" {
+//   name="project1-namespace-admin-identity-entity"
+
+// }
+// resource "vault_entity_group" "project1-namespace-admin-group" {
+//   name="project1-namespace-admin-group"
+
+// }
 
