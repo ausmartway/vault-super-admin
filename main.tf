@@ -36,6 +36,7 @@ resource "tfe_variable" "project1-workspace-namespace-vault-token" {
   category="env"
   key="VAULT_TOKEN"
   value=vault_token.project1-namespace-admin-token.client_token
+  sensitive=true
 }
 
 # Vault namespace,policy and admin token for namespaces
