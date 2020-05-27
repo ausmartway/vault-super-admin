@@ -15,7 +15,7 @@ resource "github_repository" "cba-vault-namespace-nsproject1" {
 #TFE workspace and variable
 resource "tfe_workspace" "project1-workspace" {
   name         = "project1-workspace"
-  organization = "yulei"
+  organization = var.tfe-organization
   vcs_repo  {
    identifier = github_repository.cba-vault-namespace-nsproject1.full_name
     oauth_token_id = "ot-jVjGUxW5YamZeVSZ"
