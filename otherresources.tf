@@ -1,7 +1,8 @@
 
+#github repo
 resource "github_repository" "cba-vault-namespace-nsproject1" {
   name        = "cba-vault-namespace-nsproject1"
-  description = "My awesome codebase"
+  description = "My awesome codebase for namespace project1."
 
   private = true
 
@@ -11,6 +12,7 @@ resource "github_repository" "cba-vault-namespace-nsproject1" {
   }
 }
 
+#TFE workspace and variable
 resource "tfe_workspace" "project1-workspace" {
   name         = "project1-workspace"
   organization = "yulei"
@@ -28,7 +30,7 @@ resource "tfe_variable" "project1-workspace-namespace-vault-namespace" {
   value=vault_namespace.project1-namespace.path
 }
 
-# Vault
+# Vault namespace,policy and admin token for namespaces
 resource "vault_namespace" "project1-namespace" {
   path = "project1"
 }
@@ -88,4 +90,3 @@ resource "vault_token" "project1-namespace-admin-token" {
   renew_min_lease = 43200
   renew_increment = 86400
 }
-
