@@ -30,6 +30,14 @@ resource "tfe_variable" "project1-workspace-namespace-vault-namespace" {
   value=vault_namespace.project1-namespace.path
 }
 
+resource "tfe_variable" "project1-workspace-namespace-vault-token" {
+  workspace_id=tfe_workspace.project1-workspace.id
+  description="The admin VAULT_TOKEN for this namespace"
+  category="env"
+  key="VAULT_TOKEN"
+  value=vault_token.project1-namespace-admin-token.client_token
+}
+
 # Vault namespace,policy and admin token for namespaces
 resource "vault_namespace" "project1-namespace" {
   path = "project1"
