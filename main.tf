@@ -2,7 +2,7 @@
 #github repo
 resource "github_repository" "cba-vault-namespace-nsproject1" {
   name        = "cba-vault-namespace-nsproject1"
-  description = "My awesome codebase for namespace project1."
+  description = "Terraform for Vault code repository for Vault Namespace project1."
 
   private = true
 
