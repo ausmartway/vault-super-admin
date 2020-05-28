@@ -12,6 +12,12 @@ resource "github_repository" "cba-vault-namespace-nsproject1" {
   }
 }
 
+resource "github_repository_file" "provider" {
+  repository = github.cba-vault-namespace-nsproject1.name
+  file       = "provider.tf"
+  content    = "provider vault { }"
+}
+
 # Vault namespace,policy and admin token for namespaces
 resource "vault_namespace" "project1-namespace" {
   path = "project1"
