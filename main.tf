@@ -13,7 +13,7 @@ resource "github_repository" "cba-vault-namespace-nsproject1" {
 }
 
 resource "github_repository_file" "provider" {
-  repository = github.cba-vault-namespace-nsproject1.name
+  repository = github_repository.cba-vault-namespace-nsproject1.full_name
   file       = "provider.tf"
   content    = "provider vault { }"
 }
