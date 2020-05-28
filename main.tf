@@ -12,33 +12,6 @@ resource "github_repository" "cba-vault-namespace-nsproject1" {
   }
 }
 
-#TFE workspace and variable
-resource "tfe_workspace" "project1-workspace" {
-  name         = "project1-workspace"
-  organization = var.tfe-organization
-  vcs_repo  {
-   identifier = github_repository.cba-vault-namespace-nsproject1.full_name
-    oauth_token_id = var.oauth-token-id
-  }
-}
-
-resource "tfe_variable" "project1-workspace-namespace-vault-namespace" {
-  workspace_id=tfe_workspace.project1-workspace.id
-  description="namespace this workspace is bind to"
-  category="env"
-  key="VAULT_NAMESPACE"
-  value=vault_namespace.project1-namespace.path
-}
-
-resource "tfe_variable" "project1-workspace-namespace-vault-token" {
-  workspace_id=tfe_workspace.project1-workspace.id
-  description="The admin VAULT_TOKEN for this namespace"
-  category="env"
-  key="VAULT_TOKEN"
-  value=vault_token.project1-namespace-admin-token.client_token
-  sensitive=true
-}
-
 # Vault namespace,policy and admin token for namespaces
 resource "vault_namespace" "project1-namespace" {
   path = "project1"
@@ -99,3 +72,31 @@ resource "vault_token" "project1-namespace-admin-token" {
   renew_min_lease = 43200
   renew_increment = 86400
 }
+
+#TFE workspace and variable
+resource "tfe_workspace" "project1-workspace" {
+  name         = "project1-workspace"
+  organization = var.tfe-organization
+  vcs_repo  {
+   identifier = github_repository.cba-vault-namespace-nsproject1.full_name
+    oauth_token_id = var.oauth-token-id
+  }
+}
+
+resource "tfe_variable" "project1-workspace-namespace-vault-namespace" {
+  workspace_id=tfe_workspace.project1-workspace.id
+  description="namespace this workspace is bind to"
+  category="env"
+  key="VAULT_NAMESPACE"
+  value=vault_namespace.project1-namespace.path
+}
+
+resource "tfe_variable" "project1-workspace-namespace-vault-token" {
+  workspace_id=tfe_workspace.project1-workspace.id
+  description="The admin VAULT_TOKEN for this namespace"
+  category="env"
+  key="VAULT_TOKEN"
+  value=vault_token.project1-namespace-admin-token.client_token
+  sensitive=true
+}
+
