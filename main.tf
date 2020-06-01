@@ -108,3 +108,12 @@ module "github_repo_module" {
 
   reponame = "thisisatestforyulei"
 }
+
+//--------------------------------------------------------------------
+// Modules
+module "vault_namespace_module" {
+  source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-module/specialcustomer"
+  version = "0.0.1"
+
+  namespace = "testworkspaceforcba"
+}
