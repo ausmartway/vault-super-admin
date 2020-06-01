@@ -100,3 +100,11 @@ resource "tfe_variable" "project1-workspace-namespace-vault-token" {
   sensitive=true
 }
 
+//--------------------------------------------------------------------
+// Modules
+module "github_repo_module" {
+  source  = "app.terraform.io/customer-demo-yulei-management-org/github-repo-module/specialcustomer"
+  version = "0.0.3"
+
+  reponame = "thisisatestforyulei"
+}
