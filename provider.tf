@@ -8,5 +8,9 @@ provider "github" {
 }
 
 provider "aws" {
+
+}
+
+provider "azure" {
     
 }
