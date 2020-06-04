@@ -134,11 +134,11 @@ module "vault_namespace_module" {
   namespace = "namespaceforcba"
 }
 
-// //--------------------------------------------------------------------
-// // Modules
-// module "vault_namespace_selfservice_module" {
-//   source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
-//   version = "0.0.2"
+//--------------------------------------------------------------------
+// Modules
+module "vault_namespace_selfservice_module" {
+  source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
+  version = "0.0.2"
 
-//   namespace-name = "retailbanking"
-// }
+  namespace-name = "retailbanking"
+}
