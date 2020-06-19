@@ -100,8 +100,8 @@ resource "tfe_variable" "project1-workspace-namespace-vault-token" {
   sensitive=true
 }
 
-//--------------------------------------------------------------------
-// Variables
+// //--------------------------------------------------------------------
+// // Variables
 
 
 
@@ -141,4 +141,13 @@ module "vault_namespace_selfservice_module" {
   version = "0.0.2"
 
   namespace-name = "retailbanking"
+}
+
+
+// Modules
+module "vault_namespace_businessbanking_module" {
+  source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
+  version = "0.0.2"
+
+  namespace-name = "businessbanking"
 }
