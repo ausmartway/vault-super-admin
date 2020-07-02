@@ -7,3 +7,8 @@ variable "oauth-token-id" {
     description="oAuth token id from TFE organization"
     default="ot-Xsx6ReJAouFcMzYN"
 }
+
+variable "vault_url" {
+    description="URL of vault"
+    default="http://scb-vault.yulei.aws.hashidemos.io:8200/"
+}
