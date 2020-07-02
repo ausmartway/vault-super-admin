@@ -31,13 +31,13 @@ resource vault_pki_secret_backend_role "nginx" {
   backend = vault_mount.default_pki.path
   name    = "nginx"
   allow_subdomains = true
-  allow_any_name = false
+  allow_any_name = true
   key_usage = [
     "DigitalSignature",
     "KeyAgreement",
     "KeyEncipherment",
   ]
-  ttl = "300"
-  max_ttl = "1800"
+  ttl = "30000"
+  max_ttl = "180000"
 }
 
