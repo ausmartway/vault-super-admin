@@ -22,9 +22,9 @@ resource vault_pki_secret_backend_root_cert "ca" {
 resource vault_pki_secret_backend_config_urls "ca_config_urls" {
   backend              = vault_mount.default_pki.path
   issuing_certificates = [
-    "http://scb-vault.yulei.aws.hashidemos.io:8200/v1/default_pki/ca",
-
+    "http://scb-vault.yulei.aws.hashidemos.io:8200/v1/${vault_mount.default_pki.path}/ca"
   ]
+  crl_distribution_points = "http://scb-vault.yulei.aws.hashidemos.io:8200/v1/${vault_mount.default_pki.path}/crl"
 }
 
 resource vault_pki_secret_backend_role "nginx" {
@@ -40,4 +40,3 @@ resource vault_pki_secret_backend_role "nginx" {
   ttl = "30000"
   max_ttl = "180000"
 }
-
