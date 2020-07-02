@@ -7,7 +7,7 @@ resource vault_pki_secret_backend_root_cert "ca" {
   backend = vault_mount.default_pki.path
 
   type = "internal"
-  common_name = "http://scb-vault.yulei.aws.hashidemos.io/"
+  common_name = "HashiCorp Vault on-prem"
   ttl = "315360000"
   format = "pem"
   private_key_format = "der"
