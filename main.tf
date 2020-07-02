@@ -151,3 +151,12 @@ resource "tfe_variable" "prototype1-workspace-namespace-vault-token" {
 
 //   namespace-name = "businessbanking"
 // }
+
+//--------------------------------------------------------------------
+// Modules
+module "vault_namespace_selfservice_module_investmentbanking" {
+  source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
+  version = "0.0.3"
+
+  namespace-name = "investmentbanking"
+}
