@@ -3,11 +3,11 @@ output "vault_token" {
 }
 
 output "github_repo_url" {
-    value = github_repository.cba-vault-namespace-nsprototype1.http_clone_url
+    value = github_repository.scb-vault-namespace-nsprototype1.http_clone_url
 }
 
 output "github_repo_full_name" {
-    value = github_repository.cba-vault-namespace-nsprototype1.full_name
+    value = github_repository.scb-vault-namespace-nsprototype1.full_name
 }
 
 output "tfe_worksapce_id" {
