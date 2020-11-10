@@ -1,7 +1,7 @@
 
 #github repo
-resource "github_repository" "scb-vault-namespace-nsprototype1" {
-  name        = "scb-vault-namespace-nsprototype1"
+resource "github_repository" "vault-namespace-nsprototype1" {
+  name        = "vault-namespace-nsprototype1"
   description = "Terraform for Vault code repository for Vault Namespace prototype1."
 
   private = true
@@ -108,31 +108,31 @@ resource "tfe_variable" "prototype1-workspace-namespace-vault-token" {
 
 // //--------------------------------------------------------------------
 // // Modules
-module "github_repo_module" {
-  source  = "app.terraform.io/customer-demo-yulei-management-org/github-repo-module/specialcustomer"
-  version = "0.0.3"
+// module "github_repo_module" {
+//   source  = "app.terraform.io/customer-demo-yulei-management-org/github-repo-module/specialcustomer"
+//   version = "0.0.3"
 
-  reponame = "repositoryfor-${module.vault_namespace_module.vault-namespace}"
-}
+//   reponame = "repositoryfor-${module.vault_namespace_module.vault-namespace}"
+// }
 
-module "tfe_vault_workspace_module" {
-  source  = "app.terraform.io/customer-demo-yulei-management-org/tfe-vault-workspace-module/specialcustomer"
-  version = "0.0.4"
+// module "tfe_vault_workspace_module" {
+//   source  = "app.terraform.io/customer-demo-yulei-management-org/tfe-vault-workspace-module/specialcustomer"
+//   version = "0.0.4"
 
-  github-repo-fullname = "${module.github_repo_module.repoidentifier}"
-  oauth-token-id = "ot-Xsx6ReJAouFcMzYN"
-  tfe-organization = "customer-demo-yulei-consumer-org"
-  tfe-workspace-name = "workspacefor-${module.vault_namespace_module.vault-namespace}"
-  vault-namespace = "${module.vault_namespace_module.vault-namespace}"
-  vault-token = "${module.vault_namespace_module.vault-token}"
-}
+//   github-repo-fullname = "${module.github_repo_module.repoidentifier}"
+//   oauth-token-id = "ot-Xsx6ReJAouFcMzYN"
+//   tfe-organization = "customer-demo-yulei-consumer-org"
+//   tfe-workspace-name = "workspacefor-${module.vault_namespace_module.vault-namespace}"
+//   vault-namespace = "${module.vault_namespace_module.vault-namespace}"
+//   vault-token = "${module.vault_namespace_module.vault-token}"
+// }
 
-module "vault_namespace_module" {
-  source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-module/specialcustomer"
-  version = "0.0.2"
+// module "vault_namespace_module" {
+//   source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-module/specialcustomer"
+//   version = "0.0.2"
 
-  namespace = "namespaceforscb"
-}
+//   namespace = "namespaceforscb"
+// }
 
 // //--------------------------------------------------------------------
 // // Modules
