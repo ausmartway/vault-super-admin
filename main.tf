@@ -152,8 +152,8 @@ module "vault_namespace_businessbanking_module" {
   namespace-name = "businessbanking"
 }
 
---------------------------------------------------------------------
-Modules
+//--------------------------------------------------------------------
+//Modules
 module "vault_namespace_selfservice_module_investmentbanking" {
   source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
   version = "0.0.5"
