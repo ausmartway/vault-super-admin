@@ -156,7 +156,6 @@ module "vault_namespace_businessbanking_module" {
 //Modules
 module "vault_namespace_selfservice_module_investmentbanking" {
   source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
-  version = "0.0.5"
-
+  version = "0.0.2"
   namespace-name = "investmentbanking"
 }
