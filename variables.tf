@@ -10,5 +10,5 @@ variable "oauth-token-id" {
 
 variable "vault_url" {
     description="URL of vault"
-    default="http://vault-cluster1:8200/"
+    default="http://vault-cluster1-mgl:8200/"
 }
