@@ -159,3 +159,11 @@ module "vault_namespace_selfservice_module_investmentbanking" {
   version = "0.0.2"
   namespace-name = "investmentbanking"
 }
+
+//--------------------------------------------------------------------
+//Modules
+module "vault_namespace_selfservice_module_MAM" {
+  source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
+  version = "0.0.5"
+  namespace-name = "MAM"
+}
