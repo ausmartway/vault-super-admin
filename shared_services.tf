@@ -183,3 +183,21 @@ resource "vault_pki_secret_backend_role" "prod-docker-app-servers" {
   require_cn         = true
 }
 
+
+//transit secret engine
+resource "vault_mount" "encryption-as-a-service" {
+  path                      = "EaaS"
+  type                      = "transit"
+  description               = "Encryption/Decryption as a Service for MGL"
+  default_lease_ttl_seconds = 3600
+  max_lease_ttl_seconds     = 86400
+}
+
+resource "vault_transit_secret_backend_key" "Internetbanking" {
+  backend = vault_mount.airstarthencryption.path
+  name    = "Internetbanking"
+  deletion_allowed = true
+  exportable=false
+  allow_plaintext_backup = true
+}
+
