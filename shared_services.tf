@@ -194,7 +194,7 @@ resource "vault_mount" "encryption-as-a-service" {
 }
 
 resource "vault_transit_secret_backend_key" "Internetbanking" {
-  backend = vault_mount.airstarthencryption.path
+  backend = vault_mount.encryption-as-a-service.path
   name    = "Internetbanking"
   deletion_allowed = true
   exportable=false
