@@ -12,3 +12,4 @@ variable "vault_url" {
     description="URL of vault"
     default="http://vault-cluster1-mgl:8200/"
 }
+
