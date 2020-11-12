@@ -193,3 +193,13 @@ module "vault_namespace_selfservice_module_COG" {
 }
 
 
+// //--------------------------------------------------------------------
+// //Modules
+// module "vault_namespace_selfservice_module_CAF" {
+//   source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
+//   version = "0.0.6"
+//   namespace-name = "CAF"
+// }
+
+
+
