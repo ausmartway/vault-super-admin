@@ -106,66 +106,32 @@
 
 
 
-// //--------------------------------------------------------------------
-// // Modules
-// module "github_repo_module" {
-//   source  = "app.terraform.io/customer-demo-yulei-management-org/github-repo-module/specialcustomer"
-//   version = "0.0.3"
-
-//   reponame = "repositoryfor-${module.vault_namespace_module.vault-namespace}"
-// }
-
-// module "tfe_vault_workspace_module" {
-//   source  = "app.terraform.io/customer-demo-yulei-management-org/tfe-vault-workspace-module/specialcustomer"
-//   version = "0.0.4"
-
-//   github-repo-fullname = "${module.github_repo_module.repoidentifier}"
-//   oauth-token-id = "ot-Xsx6ReJAouFcMzYN"
-//   tfe-organization = "customer-demo-yulei-consumer-org"
-//   tfe-workspace-name = "workspacefor-${module.vault_namespace_module.vault-namespace}"
-//   vault-namespace = "${module.vault_namespace_module.vault-namespace}"
-//   vault-token = "${module.vault_namespace_module.vault-token}"
-// }
-
-// module "vault_namespace_module" {
-//   source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-module/specialcustomer"
-//   version = "0.0.2"
-
-//   namespace = "namespaceforscb"
-// }
-
-// //--------------------------------------------------------------------
-// // Modules
-// module "vault_namespace_selfservice_module" {
-//   source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
-//   version = "0.0.6"
-
-//   namespace-name = "retailbanking"
-// }
-
-
-// // Modules
-// module "vault_namespace_businessbanking_module" {
-//   source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
-//   version = "0.0.2"
-
-//   namespace-name = "businessbanking"
-// }
-
-// //--------------------------------------------------------------------
-// //Modules
-// module "vault_namespace_selfservice_module_investmentbanking" {
-//   source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
-//   version = "0.0.2"
-//   namespace-name = "investmentbanking"
-// }
-
 //--------------------------------------------------------------------
-//Modules
-module "vault_namespace_selfservice_module_MAM" {
-  source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
-  version = "0.0.6"
-  namespace-name = "MAM"
+// Modules
+module "github_repo_module" {
+  source  = "app.terraform.io/customer-demo-yulei-management-org/github-repo-module/specialcustomer"
+  version = "0.0.3"
+
+  reponame = "repositoryfor-${module.vault_namespace_module.vault-namespace}"
+}
+
+module "tfe_vault_workspace_module" {
+  source  = "app.terraform.io/customer-demo-yulei-management-org/tfe-vault-workspace-module/specialcustomer"
+  version = "0.0.4"
+
+  github-repo-fullname = "${module.github_repo_module.repoidentifier}"
+  oauth-token-id = "ot-Xsx6ReJAouFcMzYN"
+  tfe-organization = "customer-demo-yulei-consumer-org"
+  tfe-workspace-name = "workspacefor-${module.vault_namespace_module.vault-namespace}"
+  vault-namespace = "${module.vault_namespace_module.vault-namespace}"
+  vault-token = "${module.vault_namespace_module.vault-token}"
+}
+
+module "vault_namespace_module" {
+  source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-module/specialcustomer"
+  version = "0.0.2"
+
+  namespace = "TESTNAMESPACE"
 }
 
 //--------------------------------------------------------------------
@@ -176,35 +142,4 @@ module "vault_namespace_selfservice_module_CGM" {
   namespace-name = "CGM"
 }
 
-//--------------------------------------------------------------------
-//Modules
-module "vault_namespace_selfservice_module_BFS" {
-  source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
-  version = "0.0.6"
-  namespace-name = "BFS"
-}
-
-//--------------------------------------------------------------------
-//Modules
-module "vault_namespace_selfservice_module_COG" {
-  source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
-  version = "0.0.6"
-  namespace-name = "COG"
-}
-
-
-//--------------------------------------------------------------------
-//Modules
-module "vault_namespace_selfservice_module_CAF" {
-  source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
-  version = "0.0.6"
-  namespace-name = "CAF"
-}
-
-// module "APP0123456" {
-//   source  = "app.terraform.io/customer-demo-yulei-management-org/vault-app-module/specialcustomer"
-//   version = "0.0.1"
-//   # insert required variables here
-//   appname = "APP0123456"
-// }
 
