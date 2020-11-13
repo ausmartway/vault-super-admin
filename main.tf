@@ -201,10 +201,10 @@ module "vault_namespace_selfservice_module_CAF" {
   namespace-name = "CAF"
 }
 
-module "APP0123456" {
-  source  = "app.terraform.io/customer-demo-yulei-management-org/vault-app-module/specialcustomer"
-  version = "0.0.1"
-  # insert required variables here
-  appname = "APP0123456"
-}
+// module "APP0123456" {
+//   source  = "app.terraform.io/customer-demo-yulei-management-org/vault-app-module/specialcustomer"
+//   version = "0.0.1"
+//   # insert required variables here
+//   appname = "APP0123456"
+// }
 
