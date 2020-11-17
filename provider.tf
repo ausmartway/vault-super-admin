@@ -7,9 +7,8 @@ provider "tfe" {
 provider "github" {
 }
 
-provider "aws" {
-}
+// provider "aws" {
+// }
 
 // provider "azure" {
-
 // }
