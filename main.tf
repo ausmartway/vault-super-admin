@@ -141,12 +141,12 @@ module "vault_namespace_selfservice_module_CGM" {
   namespace-name = "CGM"
 }
 
-// //--------------------------------------------------------------------
-// // Modules
-// module "vault_namespace_selfservice_module_App-for-rahul" {
-//   source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
-//   version = "0.0.9"
+//--------------------------------------------------------------------
+// Modules
+module "vault_namespace_selfservice_module_App-for-rahul" {
+  source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
+  version = "0.0.9"
 
-//   namespace-name = "App-for-rahul"
-//   vault-addr = "http://192.168.57.14:8200"
-// }
+  namespace-name = "App-for-rahul"
+  vault-addr = "http://192.168.57.14:8200"
+}
