@@ -137,10 +137,8 @@
 // Modules
 module "vault_namespace_selfservice_module_CGM" {
   source  = "app.terraform.io/customer-demo-yulei-management-org/vault-namespace-selfservice-module/specialcustomer"
-  version = "0.0.7"
+  version = "0.0.9"
   namespace-name = "CGM"
 }
 
-//--------------------------------------------------------------------
-// Modules
 
