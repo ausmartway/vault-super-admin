@@ -188,7 +188,7 @@ resource "vault_pki_secret_backend_role" "prod-docker-app-servers" {
 resource "vault_mount" "encryption-as-a-service" {
   path                      = "EaaS"
   type                      = "transit"
-  description               = "Encryption/Decryption as a Service for MGL"
+  description               = "Encryption/Decryption as a Service for a Banking customer"
   default_lease_ttl_seconds = 3600
   max_lease_ttl_seconds     = 86400
 }
