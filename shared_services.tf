@@ -1,7 +1,7 @@
 //github auth backend, as long as you belong to hashicorp orgnisation, you will be able to login using your personal github token.
 resource "vault_github_auth_backend" "hashicorp" {
   organization = "hashicorp"
-  token_policies = ["super_user"]
+  token_policies = ["super-user"]
 }
 
 resource "vault_policy" "super-user" {
